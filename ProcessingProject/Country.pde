@@ -1,5 +1,9 @@
 public class Country{
-  
+
+  public ArmyWindow army;
+  public RichWindow rich;
+  public PeopleWindow people;
+  public OppositionWindow  opposition;
   private float x = ((width/2) - 64) - 10,y = 0, gap = 10;
   //public PFont font = createFont("TypefaceMac.ttf", 32);
   private Dictator dic;
@@ -18,6 +22,10 @@ public class Country{
   
   public Country(Dictator d){
     this.dic=d;
+    opposition = new OppositionWindow();
+    rich = new RichWindow();
+    people = new PeopleWindow();
+    army = new ArmyWindow();
     armyButton = new Button(armyHat, new ArmyButton(this), x,y, 64, 64);
     peopleButton = new Button(head, new PeopleButton(this), x+64 + gap,y, 64, 64);
     richButton = new Button(topHat, new RichButton(this), x+64 + gap,y+64 + gap, 64, 64);
@@ -39,8 +47,13 @@ public class Country{
          buttons.get(i).update();
       }
     } else if(currentWindow == 1){
-      background(#009933);
-      rect(0,0, 50, 50);
+      army.draw();
+    } else if(currentWindow == 2){
+      people.draw();
+    } else if (currentWindow == 3){
+      rich.draw();     
+    } else if(currentWindow == 4){
+      opposition.draw();
     }
   }
   
