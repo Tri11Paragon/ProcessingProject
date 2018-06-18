@@ -70,3 +70,15 @@ public class OppositionButton implements ButtonResult{
       c.oppositionButton();
   }
 }
+
+public class EndTurnButton implements ButtonResult{
+    
+  
+    public EndTurnButton(){
+      
+    }
+    
+    public void buttonClicked(){
+      println("End Turn");     
+    }
+}
