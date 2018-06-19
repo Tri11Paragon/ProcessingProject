@@ -8,6 +8,10 @@ public static PImage topHat;
 public static PImage mask;
 public static PImage head;
 public static ArrayList<Button> buttons = new ArrayList<Button>();
+public static ArrayList<Button> armyButtons = new ArrayList<Button>();
+public static ArrayList<Button> richButtons = new ArrayList<Button>();
+public static ArrayList<Button> peopleButtons = new ArrayList<Button>();
+public static ArrayList<Button> oppositionbuttons = new ArrayList<Button>();
 
 Country country;
 private Dictator dictator;
@@ -46,6 +50,14 @@ void draw(){
 void mousePressed(){
    for(int i = 0; i < buttons.size(); i++)
      if(buttons.get(i) != null){buttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+   for(int i = 0; i < armyButtons.size(); i++)
+     if(armyButtons.get(i) != null){armyButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+   for(int i = 0; i < richButtons.size(); i++)
+     if(richButtons.get(i) != null){richButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+   for(int i = 0; i < peopleButtons.size(); i++)
+     if(peopleButtons.get(i) != null){peopleButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+   for(int i = 0; i < oppositionbuttons.size(); i++)
+     if(oppositionbuttons.get(i) != null){oppositionbuttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
 }
 
 void keyPressed(){
