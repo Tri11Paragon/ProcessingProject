@@ -48,16 +48,23 @@ void draw(){
 }
 
 void mousePressed(){
+  // basicly we check what window is showing and then update the button's click function.
+  if(currentWindow == 0){
    for(int i = 0; i < buttons.size(); i++)
      if(buttons.get(i) != null){buttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  } else if(currentWindow == 1){
    for(int i = 0; i < armyButtons.size(); i++)
      if(armyButtons.get(i) != null){armyButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  } else if (currentWindow == 3){ 
    for(int i = 0; i < richButtons.size(); i++)
      if(richButtons.get(i) != null){richButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  } else if (currentWindow == 2){
    for(int i = 0; i < peopleButtons.size(); i++)
      if(peopleButtons.get(i) != null){peopleButtons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  } else if(currentWindow == 4){
    for(int i = 0; i < oppositionbuttons.size(); i++)
      if(oppositionbuttons.get(i) != null){oppositionbuttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  }
 }
 
 void keyPressed(){

@@ -16,6 +16,8 @@ public class TextData{
   }
 }
 
+// these explain themselfs. They are  just the result for button's
+
 public class ArmyButton implements ButtonResult{
   
   private Country c;
@@ -80,5 +82,31 @@ public class EndTurnButton implements ButtonResult{
     
     public void buttonClicked(){
       println("End Turn");     
+    }
+}
+
+public class ArmyYesButton implements ButtonResult{
+    
+    ArmyWindow w;
+  
+    public ArmyYesButton(ArmyWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.yesButton();     
+    }
+}
+// very inefficent way of doing this. this is a grade 10 project, so im not worried about this.
+public class ArmyNoButton implements ButtonResult{
+    
+    ArmyWindow w;
+  
+    public ArmyNoButton(ArmyWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.noButton();     
     }
 }

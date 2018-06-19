@@ -1,4 +1,4 @@
-
+public int currentWindow = 0;
 public class Country{
 
   public ArmyWindow army;
@@ -15,19 +15,17 @@ public class Country{
   private Button peopleButton;
   private Button oppositionButton;
   
-  private int armyRep = 10;
-  private int peopleRep = 10;
-  private int richRep = 10;
-  private int oppositionRep = 10;
-  
-  private int currentWindow = 0;
+  public int armyRep = 10;
+  public int peopleRep = 10;
+  public int richRep = 10;
+  public int oppositionRep = 10;
   
   public Country(Dictator d){
     this.dic=d;
     opposition = new OppositionWindow();
     rich = new RichWindow();
     people = new PeopleWindow();
-    army = new ArmyWindow();
+    army = new ArmyWindow(this);
     armyButton = new Button(armyHat, new ArmyButton(this), x,y, w, h);
     peopleButton = new Button(head, new PeopleButton(this), x+w + gap,y, w, h);
     richButton = new Button(topHat, new RichButton(this), x+w + gap,y+h + gap, w, h);
@@ -53,17 +51,29 @@ public class Country{
       }
     } else if(currentWindow == 1){
       army.draw();
+      for(int i = 0; i < armyButtons.size(); i++){
+         armyButtons.get(i).update();
+      }
     } else if(currentWindow == 2){
       people.draw();
+      for(int i = 0; i < peopleButtons.size(); i++){
+         peopleButtons.get(i).update();
+      }
     } else if (currentWindow == 3){
-      rich.draw();     
+      rich.draw();
+      for(int i = 0; i < richButtons.size(); i++){
+         richButtons.get(i).update();
+      }
     } else if(currentWindow == 4){
       opposition.draw();
+      for(int i = 0; i <oppositionbuttons.size(); i++){
+         oppositionbuttons.get(i).update();
+      }
     }
   }
   
   public void armyButton(){
-    army = new ArmyWindow();
+    army = new ArmyWindow(this);
     currentWindow = 1;
   }
   
