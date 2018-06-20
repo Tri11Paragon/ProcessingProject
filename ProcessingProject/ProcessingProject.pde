@@ -7,6 +7,7 @@ public static PImage armyHat;
 public static PImage topHat;
 public static PImage mask;
 public static PImage head;
+public static ArrayList<Button> beginbuttons = new ArrayList<Button>();
 public static ArrayList<Button> buttons = new ArrayList<Button>();
 public static ArrayList<Button> armyButtons = new ArrayList<Button>();
 public static ArrayList<Button> richButtons = new ArrayList<Button>();
@@ -31,7 +32,7 @@ void setup(){
   head = loadImage("head.png");
   dictator = new Dictator();
   country = new Country(dictator);
-  addButton( new Button(buttonTexture, new EndTurnButton(), new TextData("End Turn", color(0,0,0), 16),(width/2) - 40, height - 50, 80, 40));
+  //addButton( new Button(buttonTexture, new EndTurnButton(), new TextData("End Turn", color(0,0,0), 16),(width/2) - 40, height - 50, 80, 40));
 }
 
 public static void addButton(Button b){
@@ -64,6 +65,9 @@ void mousePressed(){
   } else if(currentWindow == 4){
    for(int i = 0; i < oppositionbuttons.size(); i++)
      if(oppositionbuttons.get(i) != null){oppositionbuttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
+  } else if(currentWindow == -1){
+   for(int i = 0; i < beginbuttons.size(); i++)
+     if(beginbuttons.get(i) != null){beginbuttons.get(i).mouseEvent(mouseButton,mouseX, mouseY);}
   }
 }
 

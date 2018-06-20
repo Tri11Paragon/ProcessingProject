@@ -110,3 +110,88 @@ public class ArmyNoButton implements ButtonResult{
         w.noButton();     
     }
 }
+
+public class RichYesButton implements ButtonResult{
+    
+    RichWindow w;
+  
+    public RichYesButton(RichWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.yesButton();     
+    }
+}
+// very inefficent way of doing this. this is a grade 10 project, so im not worried about this.
+public class RichNoButton implements ButtonResult{
+    
+    RichWindow w;
+  
+    public RichNoButton(RichWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.noButton();     
+    }
+}
+public class PeopleYesButton implements ButtonResult{
+    
+    PeopleWindow w;
+  
+    public PeopleYesButton(PeopleWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.yesButton();     
+    }
+}
+// very inefficent way of doing this. this is a grade 10 project, so im not worried about this.
+public class PeopleNoButton implements ButtonResult{
+    
+    PeopleWindow w;
+  
+    public PeopleNoButton(PeopleWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.noButton();     
+    }
+}
+public class OppositionYesButton implements ButtonResult{
+    
+    OppositionWindow w;
+  
+    public OppositionYesButton(OppositionWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.yesButton();     
+    }
+}
+// very inefficent way of doing this. this is a grade 10 project, so im not worried about this.
+public class OppositionNoButton implements ButtonResult{
+    
+    OppositionWindow w;
+  
+    public OppositionNoButton(OppositionWindow w){
+      this.w = w;
+    }
+    
+    public void buttonClicked(){
+        w.noButton();     
+    }
+}
+public class StartGameButton implements ButtonResult{
+  
+    public StartGameButton(){
+    }
+    
+    public void buttonClicked(){
+        currentWindow = 0;
+    }
+}

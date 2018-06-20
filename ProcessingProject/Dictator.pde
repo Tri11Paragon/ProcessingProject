@@ -1,5 +1,7 @@
 public class Dictator{
  
+  // IGNORE THIS. Not using this code yet.
+  
   private final float maxAge = random(79, 100);
   private String name = "";
   private String birthDate = "";

@@ -1,4 +1,4 @@
-public int currentWindow = 0;
+public int currentWindow = -1;
 public class Country{
 
   public ArmyWindow army;
@@ -22,9 +22,9 @@ public class Country{
   
   public Country(Dictator d){
     this.dic=d;
-    opposition = new OppositionWindow();
-    rich = new RichWindow();
-    people = new PeopleWindow();
+    opposition = new OppositionWindow(this);
+    rich = new RichWindow(this);
+    people = new PeopleWindow(this);
     army = new ArmyWindow(this);
     armyButton = new Button(armyHat, new ArmyButton(this), x,y, w, h);
     peopleButton = new Button(head, new PeopleButton(this), x+w + gap,y, w, h);
@@ -34,6 +34,8 @@ public class Country{
     addButton(richButton);
     addButton(peopleButton);
     addButton(oppositionButton);
+    Button b = new Button(buttonTexture, new StartGameButton(), new TextData("No", color(200,0,0), 16),(width/2) - 80, height - 100, 160, 60);
+    beginbuttons.add(b);
   }
   
   public void draw(){
@@ -69,6 +71,21 @@ public class Country{
       for(int i = 0; i <oppositionbuttons.size(); i++){
          oppositionbuttons.get(i).update();
       }
+    } else if(currentWindow == -1){
+      background(0,0,0);
+      fill(255);
+      textSize(12);
+      text("to play this 'game' you must select a figure and answer their question.", 0,20);
+      text("if any party's reputation gets to 0 then the game is over", 0, 40);
+      text("images are terrible because im not a graphic designer and I don't have my paint.net", 0, 60);
+      text("The game code uses advanced classes and other things we have not covered",0,80);
+      text("It even loads names from a xml file.(not used)", 0,100);
+      text("with more time and a better programing language I could have made this a bit better", 0, 120);
+      text("The code is not optimized to the best of my abilites", 0, 140);
+      text("Sorry for this small text", 0, 160);
+      for(int i = 0; i <beginbuttons.size(); i++){
+         beginbuttons.get(i).update();
+      }
     }
   }
   
@@ -78,17 +95,17 @@ public class Country{
   }
   
   public void peopleButton(){
-    people = new PeopleWindow();
+    people = new PeopleWindow(this);
     currentWindow = 2;
   }
   
   public void richButton(){
-    rich = new RichWindow();
+    rich = new RichWindow(this);
      currentWindow = 3;
   }
   
   public void oppositionButton(){
-    opposition = new OppositionWindow();
+    opposition = new OppositionWindow(this);
     currentWindow = 4;
   }
   
