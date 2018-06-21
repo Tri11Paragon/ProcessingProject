@@ -1,10 +1,12 @@
 public class Button {
   
+  // stuff required for the button
+  // this is completely object orientated
   private PImage texture;
   private float x,y, width, height;
   private ButtonResult result;
   private TextData text = new TextData("", color(0,0,0), 20);
-  
+  // the next 3 constructors all us to make buttons with different attributes.
   public Button(PImage texture, ButtonResult result, float x, float y, float width, float height){
     this.texture = texture;
     this.x = x;

@@ -3,6 +3,7 @@ public interface ButtonResult{
   void buttonClicked();
   
 }
+// text data for buttons
 public class TextData{
  
   public String text;
@@ -31,7 +32,7 @@ public class ArmyButton implements ButtonResult{
   }
   
 }
-
+// these explain themselfs. They are  just the result for button's
 public class PeopleButton implements ButtonResult{
   
   private Country c;
@@ -45,7 +46,7 @@ public class PeopleButton implements ButtonResult{
   }
   
 }
-
+// these explain themselfs. They are  just the result for button's
 public class RichButton implements ButtonResult{
   
   private Country c;
@@ -59,7 +60,7 @@ public class RichButton implements ButtonResult{
   }
   
 }
-
+// these explain themselfs. They are  just the result for button's
 public class OppositionButton implements ButtonResult{
   
   private Country c;
@@ -72,7 +73,7 @@ public class OppositionButton implements ButtonResult{
       c.oppositionButton();
   }
 }
-
+// these explain themselfs. They are  just the result for button's
 public class EndTurnButton implements ButtonResult{
     
   
@@ -84,7 +85,7 @@ public class EndTurnButton implements ButtonResult{
       println("End Turn");     
     }
 }
-
+// these explain themselfs. They are  just the result for button's
 public class ArmyYesButton implements ButtonResult{
     
     ArmyWindow w;
@@ -110,7 +111,7 @@ public class ArmyNoButton implements ButtonResult{
         w.noButton();     
     }
 }
-
+// these explain themselfs. They are  just the result for button's
 public class RichYesButton implements ButtonResult{
     
     RichWindow w;
@@ -136,6 +137,7 @@ public class RichNoButton implements ButtonResult{
         w.noButton();     
     }
 }
+// these explain themselfs. They are  just the result for button's
 public class PeopleYesButton implements ButtonResult{
     
     PeopleWindow w;
@@ -161,6 +163,7 @@ public class PeopleNoButton implements ButtonResult{
         w.noButton();     
     }
 }
+// these explain themselfs. They are  just the result for button's
 public class OppositionYesButton implements ButtonResult{
     
     OppositionWindow w;
@@ -186,6 +189,7 @@ public class OppositionNoButton implements ButtonResult{
         w.noButton();     
     }
 }
+// these explain themselfs. They are  just the result for button's
 public class StartGameButton implements ButtonResult{
   
     public StartGameButton(){

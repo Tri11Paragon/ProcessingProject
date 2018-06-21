@@ -1,5 +1,7 @@
 public static class Maths{
   
+  // I DONT USE THIS CLASS!!!!! Ignore it please!
+  
   // this is bi-linear interpolation(smooths it out); i don't think this does much but its cool.
   public static float blerp(float point1, float point2, float alpha)
   {

@@ -130,7 +130,7 @@ public class ArmyWindow {
     textSize(checkSize(theText, 12, 25));
     text(theText, width/2-textWidth(theText)/2, 100);
   }
-  
+  // do results form the yes button
   public void yesButton(){
     // they explain themselfs. Do the postive and negative effects
     String[] positiveEffects = split(positiveEffect, ',');                                                                                                
@@ -139,7 +139,7 @@ public class ArmyWindow {
     doNegativeEffects(country, negativeEffects);
     currentWindow = 0;
   }
-  
+  // do results from the no button
   public void noButton(){
     // they explain themselfs. Do the postive and negative effects its jsut reversed
     String[] positiveEffects = split(negativeEffect, ',');                                                                                                
@@ -151,7 +151,9 @@ public class ArmyWindow {
     currentWindow = 0;
   }
 }
-
+/*
+  THIS IS JUST COPPIES FROM THE ABOVE CLASS.
+*/
 public class RichWindow{
   // they explain themselfs.
   int oneToUse;
