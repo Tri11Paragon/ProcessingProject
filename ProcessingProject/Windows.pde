@@ -118,7 +118,7 @@ public class ArmyWindow {
     } catch (Exception e){println("Somone messed up on the options! Error on line 19 of Windows class");}
     Button yes = new Button(buttonTexture, new ArmyYesButton(this), new TextData("Yes", color(200,0,0), 16),(width/2) - 80, height /2, 160, 60);
     armyButtons.add(yes);
-    Button no = new Button(buttonTexture, new ArmyYesButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
+    Button no = new Button(buttonTexture, new ArmyNoButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
     armyButtons.add(no);
   }
   // draw
@@ -144,7 +144,9 @@ public class ArmyWindow {
     // they explain themselfs. Do the postive and negative effects its jsut reversed
     String[] positiveEffects = split(negativeEffect, ',');                                                                                                
     doPositiveEffects(country, positiveEffects);
+    doPositiveEffects(country, positiveEffects);
     String[] negativeEffects = split(positiveEffect, ',');
+    doNegativeEffects(country, negativeEffects);
     doNegativeEffects(country, negativeEffects);
     currentWindow = 0;
   }
@@ -173,7 +175,7 @@ public class RichWindow{
     } catch (Exception e){println("Somone messed up on the options! Error on line 19 of Windows class");}
     Button yes = new Button(buttonTexture, new RichYesButton(this), new TextData("Yes", color(200,0,0), 16),(width/2) - 80, height /2, 160, 60);
     richButtons.add(yes);
-    Button no = new Button(buttonTexture, new RichYesButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
+    Button no = new Button(buttonTexture, new RichNoButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
     richButtons.add(no);
   }
   // draw
@@ -199,7 +201,9 @@ public class RichWindow{
     // they explain themselfs. Do the postive and negative effects its jsut reversed
     String[] positiveEffects = split(negativeEffect, ',');                                                                                                
     doPositiveEffects(country, positiveEffects);
+    doPositiveEffects(country, positiveEffects);
     String[] negativeEffects = split(positiveEffect, ',');
+    doNegativeEffects(country, negativeEffects);
     doNegativeEffects(country, negativeEffects);
     currentWindow = 0;
   }
@@ -228,7 +232,7 @@ public class PeopleWindow{
     } catch (Exception e){println("Somone messed up on the options! Error on line 19 of Windows class");}
     Button yes = new Button(buttonTexture, new PeopleYesButton(this), new TextData("Yes", color(200,0,0), 16),(width/2) - 80, height /2, 160, 60);
     peopleButtons.add(yes);
-    Button no = new Button(buttonTexture, new PeopleYesButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
+    Button no = new Button(buttonTexture, new PeopleNoButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
     peopleButtons.add(no);
   }
   // draw
@@ -254,7 +258,9 @@ public class PeopleWindow{
     // they explain themselfs. Do the postive and negative effects its jsut reversed
     String[] positiveEffects = split(negativeEffect, ',');                                                                                                
     doPositiveEffects(country, positiveEffects);
+    doPositiveEffects(country, positiveEffects);
     String[] negativeEffects = split(positiveEffect, ',');
+    doNegativeEffects(country, negativeEffects);
     doNegativeEffects(country, negativeEffects);
     currentWindow = 0;
   }
@@ -283,7 +289,7 @@ public class OppositionWindow{
     } catch (Exception e){println("Somone messed up on the options! Error on line 19 of Windows class");}
     Button yes = new Button(buttonTexture, new OppositionYesButton(this), new TextData("Yes", color(200,0,0), 16),(width/2) - 80, height /2, 160, 60);
     oppositionbuttons.add(yes);
-    Button no = new Button(buttonTexture, new OppositionYesButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
+    Button no = new Button(buttonTexture, new OppositionNoButton(this), new TextData("No", color(200,0,0), 16),(width/2) - 80, (height /2)+80, 160, 60);
     oppositionbuttons.add(no);
   }
   // draw
@@ -309,7 +315,9 @@ public class OppositionWindow{
     // they explain themselfs. Do the postive and negative effects its jsut reversed
     String[] positiveEffects = split(negativeEffect, ',');                                                                                                
     doPositiveEffects(country, positiveEffects);
+    doPositiveEffects(country, positiveEffects);
     String[] negativeEffects = split(positiveEffect, ',');
+    doNegativeEffects(country, negativeEffects);
     doNegativeEffects(country, negativeEffects);
     currentWindow = 0;
   }

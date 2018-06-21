@@ -5,7 +5,7 @@ public class Country{
   public RichWindow rich;
   public PeopleWindow people;
   public OppositionWindow  opposition;
-  private float w = 128, h = 128, gap = 10;
+  private float w = 128, h = 128, gap = 10, heightGap = 20;
   private float x = ((width/2) - w) - gap,y = ((height/2) - h) - gap;
   //public PFont font = createFont("TypefaceMac.ttf", 32);
   private Dictator dic;
@@ -28,13 +28,13 @@ public class Country{
     army = new ArmyWindow(this);
     armyButton = new Button(armyHat, new ArmyButton(this), x,y, w, h);
     peopleButton = new Button(head, new PeopleButton(this), x+w + gap,y, w, h);
-    richButton = new Button(topHat, new RichButton(this), x+w + gap,y+h + gap, w, h);
-    oppositionButton = new Button(mask, new OppositionButton(this), x,y+w + gap, w, h);
+    richButton = new Button(topHat, new RichButton(this), x+w + gap,y+h + gap + heightGap, w, h);
+    oppositionButton = new Button(mask, new OppositionButton(this), x,y+w + gap + heightGap, w, h);
     addButton(armyButton);
     addButton(richButton);
     addButton(peopleButton);
     addButton(oppositionButton);
-    Button b = new Button(buttonTexture, new StartGameButton(), new TextData("No", color(200,0,0), 16),(width/2) - 80, height - 100, 160, 60);
+    Button b = new Button(buttonTexture, new StartGameButton(), new TextData("Start Game!", color(200,0,0), 16),(width/2) - 80, height - 100, 160, 60);
     beginbuttons.add(b);
   }
   
@@ -47,6 +47,13 @@ public class Country{
       fill(color(255, 0, 0 ));
       rect(75, 0, 10, height);
       rect(width-75, 0, 10, height);
+      fill(0);
+      text("Army: " + armyRep, x, y);
+      text("People: " + peopleRep, x + w, y-3);
+      textSize(18);
+      text("Opposition: " + oppositionRep + "|", x, y + h+heightGap);
+      text("Oligarchs: " + richRep, x + w + 10, y + h + heightGap);
+      textSize(25);
       // thread friendly array updater   
       for(int i = 0; i < buttons.size(); i++){
          buttons.get(i).update();
